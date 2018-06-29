@@ -1,5 +1,4 @@
---- You can make queries to github database from https://cloud.google.com/pricing/free
-
+--- You can make queries to github database from https://bigquery.cloud.google.com/table/ghtorrent-bq:ght.issues?pli=1
 --- Give me projects and commits of python projects 
 
     SELECT	
