@@ -1,4 +1,5 @@
 --- You can make queries to github database from https://cloud.google.com/pricing/free
+
 --- Give me projects and commits of python projects 
 
     SELECT	
@@ -37,3 +38,9 @@ from [ghtorrent-bq.ght.project_commits] pc join
      WHERE country_code = 'es') u on c.author_id = u.id,
 group by login, location
 order by num_commits desc;
+
+--- Give me my commits
+
+select count(*)
+from [ghtorrent-bq.ght.commits] where
+     committer_id in (select id from [ghtorrent-bq.ght.users] where login='davidam')
