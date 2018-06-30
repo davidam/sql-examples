@@ -1,3 +1,4 @@
+drop database sqlexamples;
 create database if not exists sqlexamples;
 use sqlexamples;
 
@@ -6,7 +7,8 @@ create table a(
        );
 
 create table b(
-       b INTEGER NOT NULL
+       b1 INTEGER NOT NULL,
+       b2 INTEGER NOT NULL
        );
 
 insert into a values (1);
@@ -14,9 +16,8 @@ insert into a values (2);
 insert into a values (3);
 insert into a values (4);
 
-
-insert into b values (3);
-insert into b values (4);
-insert into b values (5);
-insert into b values (6);
+insert into b values (3,4);
+insert into b values (4,4);
+insert into b values (1,5);
+insert into b values (1,6);
 
