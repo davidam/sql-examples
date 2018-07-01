@@ -43,3 +43,11 @@ order by num_commits desc;
 select count(*)
 from [ghtorrent-bq.ght.commits] where
      committer_id in (select id from [ghtorrent-bq.ght.users] where login='davidam')
+
+--- Give me languages in a project
+
+select *
+from [ghtorrent-bq:ght.project_languages] pl
+where pl.project_id = 1334
+order by pl.created_at desc
+
