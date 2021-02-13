@@ -1,0 +1,57 @@
+
+* Resetting the MySQL Password
+
+** Stop the service
+
+sudo service mysql stop
+
+** Restart the MySQL services
+
+mysqld_safe --skip-grant-tables &
+
+** Log into MySQL
+
+mysql
+
+** Mysql prompt
+
+UPDATE mysql.user SET Password=PASSWORD('new-password') WHERE User='root';
+
+FLUSH PRIVILEGES;
+exit;
+
+** Stop mysql server
+
+mysqladmin -u root -p shutdown
+
+** Start myserver server normally
+
+service mysql start
+
+* Create user mysql
+
+CREATE USER 'jeffrey'@'localhost' IDENTIFIED BY 'password';
+
+* Grant access to table
+
+USE sqlexamples;
+
+CREATE TABLE a(
+       a INTEGER NOT NULL
+       );
+
+GRANT ALL PRIVILEGES ON sqlexample.* TO 'username'@'localhost';
+
+* Using mysql en Python
+
+$ python3
+>>> import mysql.connector
+>>> mydb = mysql.connector.connect(host="localhost", database="sqlexamples", user="jeffrey", password="password")
+>>> mycursor = mydb.cursor()
+>>> mycursor.execute("SHOW tables")
+>>> for x in mycursor:
+...   print(x)
+... 
+('a',)
+('b',)
+
