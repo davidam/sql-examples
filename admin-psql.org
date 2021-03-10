@@ -1,0 +1,39 @@
+
+* Installing 
+
+sudo apt-get install postgresql-12 postgresql-client-12
+sudo -u postgres 
+
+
+sudo su postgres
+[sudo] contraseña para davidam: 
+
+$ createuser davidam
+$ psql 
+psql (12.6 (Ubuntu 12.6-0ubuntu0.20.10.1))
+Type "help" for help.
+
+postgres=# alter user davidam createdb
+postgres-# ;
+ALTER ROLE
+postgres=# \q
+$ createdb davidam
+$ exit
+
+* Checking the installation
+
+$ psql 
+psql (12.6 (Ubuntu 12.6-0ubuntu0.20.10.1))
+Type "help" for help.
+
+davidam=> \q
+$ createdb davidam2
+$ psql davidam2
+psql (12.6 (Ubuntu 12.6-0ubuntu0.20.10.1))
+Type "help" for help.
+
+davidam2=> \q
+
+
+* Create database
+
