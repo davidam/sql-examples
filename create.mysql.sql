@@ -1,5 +1,10 @@
 drop database sqlexamples;
+drop user 'jeffrey'@'localhost';
+
 create database if not exists sqlexamples;
+create user 'jeffrey'@'localhost';
+grant all privileges on sqlexamples.* to 'jeffrey'@'localhost';
+
 use sqlexamples;
 
 create table a(
@@ -20,4 +25,3 @@ insert into b values (3,4);
 insert into b values (4,4);
 insert into b values (1,5);
 insert into b values (1,6);
-
