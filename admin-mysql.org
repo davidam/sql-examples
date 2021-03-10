@@ -40,7 +40,11 @@ CREATE TABLE a(
        a INTEGER NOT NULL
        );
 
-GRANT ALL PRIVILEGES ON sqlexample.* TO 'username'@'localhost';
+GRANT ALL PRIVILEGES ON sqlexamples.* TO 'username'@'localhost';
+
+* Load a file in Mysql
+
+mysql -u jeffrey -p sqlexamples < ~/git/sql-examples/create.sql
 
 * Using mysql en Python
 
